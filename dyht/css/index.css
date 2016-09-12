@@ -1,0 +1,81 @@
+/*reset*/
+body{
+	margin:0;
+}
+a{
+	text-decoration: none;
+}
+/*首屏视频*/
+.fold{
+	position:relative;
+	width:100%;
+	overflow:hidden;
+	background:url(../img/pic-cover-bg.jpg) 50% 50% no-repeat;
+	background-size: cover;
+}
+.fold_video{
+	position:absolute;
+	min-width:100%;
+	min-height:100%;
+	overflow:hidden;
+}
+/*影视创意*/
+.Creative_videos{
+	margin-top:50px;
+	padding-top:100px;
+}
+.Creative_videos div{
+	height:100px;
+}
+/*follow*/
+.follow{
+	position:relative;
+}
+/*bbs*/
+.bbs{
+	padding-bottom:100px;
+	text-align:center;
+}
+.bbs img{
+	opacity:0.55;
+	transition: .5s;
+}
+.bbs img:hover{
+	transform: scale(1.1);
+	opacity: 1;
+}
+/*footer*/
+footer{
+	font-size:12px;
+	font-family: arial;
+	text-align:center;
+	color:rgb(68,68,68);
+	line-height:20px;
+}
+footer a{
+	margin-top:70px;
+}
+footer a img{
+	width:119px;
+	height:60px;
+	opacity:0.55;
+	transition: 0.75s;
+	transform: translate(0,0);
+}
+footer p{
+	margin-top:60px;
+	margin-bottom:60px;
+}
+footer .email{
+	color:red;
+	opacity:0.55;
+}
+footer .email:hover{
+	opacity: 1;
+}
+/*hr*/
+hr{
+    border-top: 1px solid #ddd;
+    margin-top:20px;
+    margin-bottom:20px;
+}
