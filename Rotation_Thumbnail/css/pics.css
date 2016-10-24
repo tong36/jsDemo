@@ -1,0 +1,83 @@
+/*reset*/
+body{
+	margin: 0px;
+}
+ul{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+/*main*/
+.wrap{
+	width:900px;
+	margin: 50px auto;
+	position: relative;
+}
+.picbig{
+	width:900px;
+	height:600px;
+}
+ul{
+	position: absolute;
+	left:40%;
+	bottom: 20px;
+	height:20px;
+}
+li{
+	float: left;
+	width:20px;
+	height:20px;
+	border-radius: 10px 10px;
+	background-color: #333;
+	cursor: pointer;
+	margin-right:10px;
+	position:relative;
+}
+.points .active{
+	background-color: #f40;
+}
+.picwrap{
+	width:200px;
+	height:140px;
+	background-color:#fff;
+	position: absolute;
+	top:-150px;
+	left:-90px;
+	text-align: center;
+	border-radius: 10px;
+	opacity: 0;
+}
+.picsmall{
+	width:180px;
+	height:120px;
+	margin-top:10px;	
+}
+.tri{
+	width:0px;
+	border:10px solid rgba(0,0,0,0);
+	border-top-color:#fff;
+	position: absolute;
+	bottom: -18px;
+	left:45%;
+	z-index: 10;
+}
+/*btn*/
+.left,.right{
+	width:80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: rgba(255,255,255,0.5);
+	position:absolute;
+	top:260px;
+	font:bold 68px/80px '楷体';
+	text-align: center;
+	cursor: pointer;
+	color: #f40;
+}
+.left{
+	left:10px;
+}
+.right{
+	right: 10px;
+}

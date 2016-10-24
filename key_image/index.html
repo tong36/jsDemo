@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		ul {
+			margin: 50px auto;
+			padding: 0px;
+			list-style: none;
+			width: 500px;
+			height: 300px;
+			position: relative;
+			overflow: hidden;
+		}
+		
+		li {
+			width: 500px;
+			height: 300px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		
+		#li1 {
+			background-image: url(img/0.jpg);
+			z-index: 2;
+		}
+		
+		#li2 {
+			background-image: url(img/1.jpg);
+			z-index: 1;
+		}
+	</style>
+
+	<body>
+		<ul>
+			<li id="li1"></li>
+			<li id="li2"></li>
+		</ul>
+	</body>
+	<script>
+		window.onload = function() {
+			var timer = null;
+			var li1 = document.querySelector("#li1");
+			var li2 = document.querySelector("#li2");
+			var a = 0;
+			var onoff = true;
+			document.onkeyup = function(e) {
+				if (onoff) {
+					onoff = false;
+					switch (e.keyCode) {
+						case 37:
+							move("left", 500);
+							break;
+						case 38:
+							move("top", 300);
+							break;
+						case 39:
+							move("left", -500);
+							break;
+						case 40:
+							move("top", -300);
+							break;
+					}
+				}
+
+			}
+
+			function move(attr, con) {
+				clearInterval(timer);
+				var startTime = new Date().getTime();
+				var cont = con;
+				var dorution = 1000;
+				var begin = 0;
+				timer = setInterval(function() {
+					var t = new Date().getTime() - startTime;
+					if (t > dorution) {
+						t = dorution;
+					}
+					var value = begin + cont / dorution * t;
+					console.log(value);
+					li1.style[attr] = -value + "px";
+					if (value == con) {
+						onoff = true;
+						clearInterval(timer);
+						li1.style[attr] = "0px";
+						li2.style.backgroundImage = 'url(img/' + (a + 1) % 10 + '.jpg)';
+						li1.style.backgroundImage = 'url(img/' + a % 10 + '.jpg)';
+
+					}
+				}, 16);
+				a++;
+
+			}
+		}
+	</script>
+
+</html>

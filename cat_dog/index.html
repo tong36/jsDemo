@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul{
+				margin:0;
+				padding:0;
+				list-style:none;
+			}
+			img{
+				vertical-align:top;
+				border: none;
+				height:100%;
+				width:100%;
+				border-radius: 50%;
+			}
+			input{
+				margin:0;
+				padding:0;
+				border: none;
+			}
+			.box{
+				width:500px;
+				margin:50px auto;
+			}
+			.btn-class{
+				overflow: hidden;
+				margin-bottom: 40px;
+			}
+			.btn-class input{
+				width: 80px;
+				height: 40px;
+				border-radius: 3px;
+				background-color: blueviolet;
+				/*border: 1px solid blueviolet;*/
+				/*box-shadow:  0 0 5px blueviolet;*/
+				font: 20px/40px "微软雅黑";
+				text-align:center;
+				color:#fff;
+				float:left;
+				margin-right: 15px;
+				cursor: pointer;
+			}
+			.btn-class input:hover,
+			.btn-class input.check{
+				background-color: orangered;
+			}
+			.list{
+				width:100%;
+			}
+			.list li{
+				width:140px;
+				height:140px;
+				float:left;
+				margin-right:20px;
+				margin-bottom:20px;
+				transform-origin: center;
+				transition: 1s;
+			}
+			.list li.small{
+				transform: scale(.7);
+				opacity: .4;
+			}
+			.list li.check{
+				transform: scale(1.1);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="btn-class">
+				<input type="button" value="全部" class="check" />
+				<input type="button" value="小喵" data-type="xiaomiao" />
+				<input type="button" value="小狗" data-type="xiaogou" />
+				<input type="button" value="白兔" data-type="baitu" />
+			</div>
+			<ul class="list">
+				<li data-type="xiaogou"><img src="img/gougou1.jpg" /></li>
+				<li data-type="xiaomiao"><img src="img/maomi1.jpg" /></li>
+				<li data-type="xiaogou"><img src="img/gougou2.jpg" /></li>
+				<li data-type="xiaomiao"><img src="img/maomi2.jpg" /></li>
+				<li data-type="baitu"><img src="img/tutu1.jpg" /></li>
+				<li data-type="xiaogou"><img src="img/gougou3.jpg" /></li>
+				<li data-type="xiaomiao"><img src="img/maomi4.jpg" /></li>
+				<li data-type="baitu"><img src="img/tutu4.jpg" /></li>
+				<li data-type="xiaomiao"><img src="img/maomi3.jpg" /></li>
+			</ul>
+		</div>
+		<script>
+			var btns = document.querySelectorAll('input');
+			var li = document.querySelectorAll('li');
+			for(var i = 0; i < btns.length; i++) {
+				btns[i].onclick = function() {
+					for (var i = 0; i < btns.length; i++) {
+						btns[i].className = '';
+					}
+					this.className = 'check';
+					var type = this.dataset.type;
+					for( var i = 0; i < li.length; i++) {
+						li[i].className = 'small';
+						if(li[i].dataset.type == type) li[i].className = 'check';
+					}
+				}
+			}
+			btns[0].onclick = function() {
+				for(var i = 0; i < btns.length; i++) {
+					btns[i].className = '';
+				}
+				this.className = 'check'
+				for(var  i = 0; i < li.length; i++) {
+					li[i].className = '';
+				}
+			}
+		</script>
+	</body>
+</html>
