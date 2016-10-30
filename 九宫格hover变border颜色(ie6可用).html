@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			1.这个是在zheli(https://github.com/zhangmengxue/Practice)找到的。原微博是这里(http://weibo.com/1397442732/z8kZO6DPZ?type=comment#_rnd1477589290986)。
+			2.这一个兼容了IE6的九宫格hover效果。技术菜，做起来真的真的真的很恶心、
+		-->
+		<style>
+			ol{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			a{
+				text-decoration: none;
+			}
+			.box{
+				width:170px;
+				height:170px;
+			}
+			.box li{
+				float: left;
+			}
+			.box a{
+				width:50px;
+				height:50px;
+				border: 5px solid blue;
+				display:inline-block;
+				line-height: 50px;
+				color: blue;
+				text-align:center;
+			}
+			.box a:hover{
+				position: relative;
+				*left: -5px;
+				z-index: 1;
+				border-color: red;
+			}
+			.box .a_one:hover, .box .a_four:hover, .box .a_seven:hover{
+				position: relative;
+				*left:0;
+				z-index: 1;
+				border-color: red;
+			}
+			.div{
+				margin-bottom: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div">
+			<a href="https://github.com/zhangmengxue/Practice" target="_blank">原题目链接</a>
+		</div>
+		<ol class="box">
+			<li><a class="a_one" href="">1</a></li>
+			<li><a href="" style="margin: 0 0 0 -5px;">2</a></li>
+			<li><a href="" style="margin: 0 0 0 -5px;">3</a></li>
+			<li><a class="a_four" href="" style="margin: -5px 0 0 0;">4</a></li>
+			<li><a href="" style="margin: -5px 0 0 -5px;">5</a></li>
+			<li><a href="" style="margin: -5px 0 0 -5px;">6</a></li>
+			<li><a class="a_seven" href="" style="margin: -5px 0 0 0;">7</a></li>
+			<li><a href="" style="margin: -5px 0 0 -5px;">8</a></li>
+			<li><a href="" style="margin: -5px 0 0 -5px;">9</a></li>
+		</ol>
+	</body>
+</html>
