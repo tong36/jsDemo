@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		.list1 li{
+			border: 1px solid tomato;
+			color: blue;
+			
+		}
+		.list2>li{
+			border: 1px solid tomato;
+			color: blue;
+		}
+		</style>
+	</head>
+	<body>
+		<!--
+			后代选择器会匹配后代所有元素
+			
+			子代选择器只匹配第一代子元素
+			
+			后代选择器所有浏览器兼容
+			
+			子代选择器IE6 7 8 不支持
+		-->
+		<ul class="list1">
+			<li>水果</li>
+			<ul>
+				<li>香蕉</li>
+				<li>橘子</li>
+				<li>苹果</li>
+			</ul>
+		</ul>
+		<ul class="list2">
+			<li>水果</li>
+			<ul>
+				<li>香蕉</li>
+				<li>橘子</li>
+				<li>苹果</li>
+			</ul>
+		</ul>
+	</body>
+</html>
