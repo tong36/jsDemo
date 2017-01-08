@@ -16,6 +16,10 @@
 			<p>{{ message }}</p>
 			<button v-on:click='tong'>Reverse Message</button>
 		</div>
+		<div id='app6'>
+			<p>{{ message }}</p>
+			<input v-model='message' />
+		</div>
 		<script src="vue.js"></script>
 		<script>
 			var app4 = new Vue({
@@ -29,14 +33,20 @@
 				}
 			})
 			var app5 = new Vue({
-				el: 'app5',
+				el: '#app5',
 				data: {
 					message: 'hello world!'
 				},
 				methods: {
 					tong: function() {
-						console.log(this)
+						this.message = this.message.split('').reverse().join('')
 					}
+				}
+			})
+			var app6 = new Vue({
+				el: '#app6',
+				data: {
+					message: 'hello world',
 				}
 			})
 		</script>
