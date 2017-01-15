@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app1"></div>
+	<div id="app2"></div>
+	<script src="vue.js"></script>
+	<script type="text/javascript">
+		var data = { a: 1 };
+		var app1 = new Vue({
+			el: '#app1',
+			data: data
+		})
+		console.log(app1.a === data.a);
+		console.log(app1.$data === data);
+		app1.$watch('a',function(newVal, oldVal) {
+			console.log(newVal);
+			console.log(oldVal);
+		})
+		data.a = 'this new val';
+		var app2 = new Vue({
+			el: '#app2',
+			data: {
+				a : 1
+			},
+			created: function()	{
+				console.log('a is:' + this.a)
+			}
+		})
+	</script>
+</body>
+</html>
