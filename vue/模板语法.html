@@ -5,10 +5,52 @@
 	<title>Document</title>
 </head>
 <body>
-		<div id="app1"></div>
+		<div id="app1">
+			<p>original message: "{{ message }}"</p>
+			<p>computed original message: "{{ reversedMessage }}"</p>
+		</div>
+		<div id="app2">{{ fullname }}</div>
 		<script src="vue.js"></script>
 		<script type="text/javascript">
-			
+			var vm = new Vue({
+				el: '#app1',
+				data: {
+					message: 'hello'
+				},
+				computed: {
+					reversedMessage: function() {
+						return this.message.split('').reverse().join('');	
+					}
+				}
+			})
+			var vm1 = new Vue({
+				el: '#app2',
+				data: {
+					firstname: 'foo',
+					lastname: 'bar',
+					fullname: 'foo bar'
+				},
+				// watch: {
+				// 	firstname: function(val) {
+				// 		this.fullname = val + '' + this.lastname;
+				// 	},
+				// 	lastname: function(val) {
+				// 		this.fullname = this.firstname + '' + val
+				// 	}
+				// }
+				conputed: {
+					fullname: {
+						get: function() {
+							return this.firstname + '' + this.lastname;
+						},
+						set: function(newValue) {
+							var names = newValue.split('');
+							this.firsename = names[0];
+							this.lastname = name[names.length - 1]
+						}
+					}
+				}
+			})
 		</script>
 </body>
 </html>

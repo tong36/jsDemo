@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.a{
+			color: red;
+		}
+		.b{
+			font-size: 12px;
+		}
+		.c{
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div id="app1" class="a" :class="{ b:isb, c:isc }">
+		{{ message }}
+	</div>
+	<script src="vue.js"></script>
+	<script type="text/javascript">
+	var vm1 = new Vue({
+		el: '#app1',
+		data: {
+			message: 'hello world!',
+			isb: false,
+			isc: false
+		}
+	})
+	</script>
+</body>
+</html>
