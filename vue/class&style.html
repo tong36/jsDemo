@@ -19,16 +19,43 @@
 	<div id="app1" class="a" :class="{ b:isb, c:isc }">
 		{{ message }}
 	</div>
+	<div id="app2" :class="[classa, classb]">
+		{{ message }}
+	</div>
+	<p id="app3" :style="[cssStyle2,cssStyle]">
+		{{ message }}
+	</p>
 	<script src="vue.js"></script>
 	<script type="text/javascript">
-	var vm1 = new Vue({
-		el: '#app1',
-		data: {
-			message: 'hello world!',
-			isb: false,
-			isc: false
-		}
-	})
+		var vm1 = new Vue({
+			el: '#app1',
+			data: {
+				message: 'hello world!',
+				isb: true,
+				isc: false
+			}
+		})
+			var vm2 = new Vue({
+			el: '#app2',
+			data: {
+				message: 'hello world!',
+				classa: 'a',
+				classb: 'b'
+			}
+		})
+			var vm3 = new Vue({
+				el: '#app3',
+				data: {
+					message: 'hello world!',
+					cssStyle: {
+						color: 'blue',
+						fontSize: '20px'
+					},
+					cssStyle2: {
+						fontWeight: 'bold'
+					}
+				}
+			})
 	</script>
 </body>
 </html>
